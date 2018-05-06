@@ -1,7 +1,6 @@
 package mb.app.climbingTopo.services.impl;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,7 +29,7 @@ public class GmapsGeocodingServiceImpl implements GmapsGeocodingService {
 				.apiKey("AIzaSyCJRKpATWFG7-gPVykjNWo8HfNuE-pRNH4")
 				.build();
 		GeocodingResult[] results = GeocodingApi.geocode(context, 
-				"Grenoble").await();
+				city).await();
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		System.out.println(gson.toJson(results[0].addressComponents));
 		return Arrays.asList(results);
